@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+
+:root {
+    --primary-color: rgb(236, 236, 236);
+    --secondary-color: rgb(226, 173, 58);
+    --background: #181717;
+    --black-color: #000000;
+    font-family: "Rethink Sans", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid-header {
+    display: grid;
+    grid-template-columns: 80px 5fr 2fr 80px 80px;
+    grid-template-rows: 80px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+}
+
+.grid-menu {
+    display: flex;
+    gap: 40px;
+}
+
+header {
+    background-color: var(--background);
+    padding: 10px;
+    text-align: center;
+}
+
+header > img {
+    width: 70%;
+    object-fit: contain;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    color: var(--primary-color);
+    
+}
+
+button {
+    background-color: var(--secondary-color);
+    font-size: 18px;
+    color: var(--primary-color);
+    padding: 20px;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.lupa {
+    width: 40px;
+}
+
+.usuario {
+    width: 40px;
+}
+
+/* Ordenador reducido */
+
+@media (max-width: 1200px) {
+    .grid-header {
+        grid-template-columns: 80px 8fr 80px;
+    }
+
+    .lupa {
+        display: none;
+    }
+
+    .button {
+        display: none;
+    }
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .grid-menu {
+        display: none;
+    }
+
+    .lupa {
+        display: none;
+    }
+
+    .button {
+        display: none;
+    }
+}
+
+/* Móvil */
+
+@media (max-width: 375px) {
+    .grid-menu {
+        display: none;
+    }
+
+    .lupa {
+        display: none;
+    }
+
+    .button {
+        display: none;
+    }
+}
