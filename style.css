@@ -2,7 +2,7 @@
 
 :root {
     --primary-color: rgb(236, 236, 236);
-    --secondary-color: rgb(226, 173, 58);
+    --secondary-color: rgb(230, 154, 15);
     --background: #181717;
     --black-color: #000000;
     font-family: "Rethink Sans", sans-serif;
@@ -27,17 +27,36 @@
 .grid-menu {
     display: flex;
     gap: 40px;
+    align-items: center;
+}
+
+.logo-menu {
+    width: 60px;
+}
+
+.lupa,
+.logo-desplegable,
+.usuario {
+    width: 40px;
+}
+
+.flecha {
+    width: 15px;
+}
+
+.logo-desplegable,
+.mas {
+    display: none;
+}
+
+.mas {
+    padding: 10px;
 }
 
 header {
     background-color: var(--background);
     padding: 10px;
     text-align: center;
-}
-
-header > img {
-    width: 70%;
-    object-fit: contain;
 }
 
 a {
@@ -52,7 +71,6 @@ ul {
 
 li {
     color: var(--primary-color);
-    
 }
 
 button {
@@ -66,27 +84,27 @@ button {
     font-weight: bolder;
 }
 
-.lupa {
-    width: 40px;
-}
-
-.usuario {
-    width: 40px;
-}
-
 /* Ordenador reducido */
 
-@media (max-width: 1200px) {
+/* No consigo hacer desaparecer el espacio de los <li> no visibles, para que el "Más" se quede cerca del resto de elementos de la lista */
+
+@media (max-width: 1300px) {
     .grid-header {
-        grid-template-columns: 80px 8fr 80px;
+        gap: none;
+        grid-template-columns: 1fr 5fr 2fr 1fr;
     }
 
     .lupa {
         display: none;
     }
 
-    .button {
+    .none {
         display: none;
+    }
+
+    .mas {
+        display: flex;
+        order: 1;
     }
 }
 
@@ -104,6 +122,23 @@ button {
     .button {
         display: none;
     }
+    .logo-menu {
+        grid-area: rock;
+    }
+
+    .usuario {
+        grid-area: usuario;
+    }
+
+    .grid-header {
+        display: grid;
+        grid-template-areas: "desplegable rock usuario";
+    }
+
+    .logo-desplegable {
+        grid-area: desplegable;
+        display: flex;
+    }
 }
 
 /* Móvil */
@@ -119,5 +154,10 @@ button {
 
     .button {
         display: none;
+    }
+
+    .logo-menu {
+        display: fixed;
+        order: -1;
     }
 }
